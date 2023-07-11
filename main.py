@@ -64,7 +64,7 @@ def load_data(file):
     y3 = np.array(list_of_gimev)
     y4 = np.array(list_of_gimeb)
     y5 = np.array(list_of_gimem)
-    y6 = 
+
 
     plt.plot(x, y3, color = '#8a2be2', marker = 'o', label = 'Bendras')
     plt.plot(x, y4, marker = 'o', label = 'Berniukai')
