@@ -15,6 +15,7 @@ def load_data(file):
     list_of_gimeb = data['gime_b'].to_list()
     list_of_gimem = data['gime_m'].to_list()
     list_of_LT = data['LT'].to_list()
+    list_of_uzs = data['sum_uzs'].to_list()
     list_of_GBR = data['GBR'].to_list()
     list_of_NOR = data['NOR'].to_list()
     list_of_DE = data['DE'].to_list()
@@ -60,28 +61,76 @@ def load_data(file):
     # plt.show()
 
     # gimusiu vaiku skaiciaus diagrama
-    x = np.array(list_of_years)
-    y3 = np.array(list_of_gimev)
-    y4 = np.array(list_of_gimeb)
-    y5 = np.array(list_of_gimem)
-
-    plt.plot(x, y3, color = '#8a2be2', marker = 'o', label = 'Bendras')
-    plt.plot(x, y4, marker = 'o', label = 'Berniukai')
-    plt.plot(x, y5, marker = 'o', color='#fb607f', label='Mergaitės')
-    plt.title('Gimusių vaikų skaičiaus kitimas')
-    plt.xlabel('Metai')
-    plt.ylabel('Gimusių vaikų skaičius')
-    plt.legend()
-    plt.grid()
-    plt.show()
-
-
+    # x = np.array(list_of_years)
+    # y3 = np.array(list_of_gimev)
+    # y4 = np.array(list_of_gimeb)
+    # y5 = np.array(list_of_gimem)
+    #
+    # plt.plot(x, y3, color = '#8a2be2', marker = 'o', label = 'Bendras')
+    # plt.plot(x, y4, marker = 'o', label = 'Berniukai')
+    # plt.plot(x, y5, marker = 'o', color='#fb607f', label='Mergaitės')
+    # plt.title('Gimusių vaikų skaičiaus kitimas')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Gimusių vaikų skaičius')
+    # plt.legend()
+    # plt.grid()
+    # plt.show()
 
 
+    # # gimusiu vaiku uzsienyje skaiciaus palyginimas su gimusiais Lietuvoje
+    # x = np.array(list_of_years)
+    # y6 = np.array(list_of_LT)
+    # y7 = np.array(list_of_uzs)
+    # lt2018 = (y6[0])
+    # lt2019 = (y6[1])
+    # lt2020 = (y6[2])
+    # lt2021 = (y6[3])
+    # lt2022 = (y6[4])
+    # uzs2018 = (y7[0])
+    # uzs2019 = (y7[1])
+    # uzs2020 = (y7[2])
+    # uzs2021 = (y7[3])
+    # uzs2022 = (y7[4])
 
+    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    # pyrag2018 = np.array([lt2018, uzs2018])
+    # fig, ax = plt.subplots()
+    # ax.pie(pyrag2018, labels=pyrag2018, autopct='%1.1f%%', startangle=0)
+    # ax.axis('equal')
+    # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2018 metais')
+    # plt.show()
 
+    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    # pyrag2019 = np.array([lt2019, uzs2019])
+    # fig, ax = plt.subplots()
+    # ax.pie(pyrag2019, labels=pyrag2019, autopct='%1.1f%%', startangle=0)
+    # ax.axis('equal')
+    # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2019 metais')
+    # plt.show()
 
+    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    # pyrag2020 = np.array([lt2020, uzs2020])
+    # fig, ax = plt.subplots()
+    # ax.pie(pyrag2020, labels=pyrag2020, autopct='%1.1f%%', startangle=0)
+    # ax.axis('equal')
+    # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2020 metais')
+    # plt.show()
 
+    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    # pyrag2021 = np.array([lt2021, uzs2021])
+    # fig, ax = plt.subplots()
+    # ax.pie(pyrag2021, labels=pyrag2021, autopct='%1.1f%%', startangle=0)
+    # ax.axis('equal')
+    # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2021 metais')
+    # plt.show()
+
+    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    # pyrag2022 = np.array([lt2022, uzs2022])
+    # fig, ax = plt.subplots()
+    # ax.pie(pyrag2022, labels=pyrag2022, autopct='%1.1f%%', startangle=0)
+    # ax.axis('equal')
+    # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2022 metais')
+    # plt.show()
 
 
 def main():
