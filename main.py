@@ -47,25 +47,25 @@ def load_data(file):
     list_of_nuzudymas = data['nuzudymas'].to_list()
     list_of_kitospr = data['kitos_priezastys'].to_list()
 
-    # gimdanciu moteru amziaus diagrama
+
+    # # 1.Gimdanciu moteru amziaus diagrama
     # x = np.array(list_of_years)
     # y1 = np.array(list_of_vma)
     # y2 = np.array(list_of_vap)
-    #
     # plt.plot(x, y1, label = 'Visų gimdymų')
-    # plt.plot(x, y2, color = 'r', label = 'Pirmagimis')
+    # plt.plot(x, y2, color = 'red', label = 'Pirmagimis')
     # plt.title('Gimdančių moterų vidutinis amžius')
     # plt.xlabel('Metai')
     # plt.ylabel('Moters amžius')
     # plt.legend()
     # plt.show()
 
-    # gimusiu vaiku skaiciaus diagrama
+
+    # # 2.Gimusiu vaiku skaiciaus diagrama
     # x = np.array(list_of_years)
     # y3 = np.array(list_of_gimev)
     # y4 = np.array(list_of_gimeb)
     # y5 = np.array(list_of_gimem)
-    #
     # plt.plot(x, y3, color = '#8a2be2', marker = 'o', label = 'Bendras')
     # plt.plot(x, y4, marker = 'o', label = 'Berniukai')
     # plt.plot(x, y5, marker = 'o', color='#fb607f', label='Mergaitės')
@@ -77,60 +77,195 @@ def load_data(file):
     # plt.show()
 
 
-    # # gimusiu vaiku uzsienyje skaiciaus palyginimas su gimusiais Lietuvoje
+    # # 3.Gimusiu vaiku uzsienyje skaiciaus palyginimas su gimusiais Lietuvoje
     # x = np.array(list_of_years)
     # y6 = np.array(list_of_LT)
     # y7 = np.array(list_of_uzs)
     # lt2018 = (y6[0])
-    # lt2019 = (y6[1])
-    # lt2020 = (y6[2])
-    # lt2021 = (y6[3])
-    # lt2022 = (y6[4])
     # uzs2018 = (y7[0])
+    # lt2019 = (y6[1])
     # uzs2019 = (y7[1])
+    # lt2020 = (y6[2])
     # uzs2020 = (y7[2])
+    # lt2021 = (y6[3])
     # uzs2021 = (y7[3])
+    # lt2022 = (y6[4])
     # uzs2022 = (y7[4])
-
-    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    #
+    # # 2018 m. skaiciu palyginimas
     # pyrag2018 = np.array([lt2018, uzs2018])
     # fig, ax = plt.subplots()
-    # ax.pie(pyrag2018, labels=pyrag2018, autopct='%1.1f%%', startangle=0)
+    # myexplode = [0.1, 0]
+    # ax.pie(pyrag2018, labels=pyrag2018, autopct='%1.1f%%', startangle=0, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2018 metais')
     # plt.show()
-
-    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    #
+    # # 2019 m. skaiciu palyginimas
     # pyrag2019 = np.array([lt2019, uzs2019])
     # fig, ax = plt.subplots()
-    # ax.pie(pyrag2019, labels=pyrag2019, autopct='%1.1f%%', startangle=0)
+    # myexplode = [0.1, 0]
+    # ax.pie(pyrag2019, labels=pyrag2019, autopct='%1.1f%%', startangle=0, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2019 metais')
     # plt.show()
-
-    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    #
+    # # 2020 m. skaiciu palyginimas
     # pyrag2020 = np.array([lt2020, uzs2020])
     # fig, ax = plt.subplots()
-    # ax.pie(pyrag2020, labels=pyrag2020, autopct='%1.1f%%', startangle=0)
+    # myexplode = [0.1, 0]
+    # ax.pie(pyrag2020, labels=pyrag2020, autopct='%1.1f%%', startangle=0, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2020 metais')
     # plt.show()
-
-    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    #
+    # # 2021 m. skaiciu palyginimas
     # pyrag2021 = np.array([lt2021, uzs2021])
     # fig, ax = plt.subplots()
-    # ax.pie(pyrag2021, labels=pyrag2021, autopct='%1.1f%%', startangle=0)
+    # myexplode = [0.1, 0]
+    # ax.pie(pyrag2021, labels=pyrag2021, autopct='%1.1f%%', startangle=0, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2021 metais')
     # plt.show()
-
-    # # Gimusiu vaiku Lietuvoje ir uzsienyje 2018 m. skaiciu palyginimas
+    #
+    # # 2022 m. skaiciu palyginimas
     # pyrag2022 = np.array([lt2022, uzs2022])
     # fig, ax = plt.subplots()
-    # ax.pie(pyrag2022, labels=pyrag2022, autopct='%1.1f%%', startangle=0)
+    # myexplode = [0.1, 0]
+    # ax.pie(pyrag2022, labels=pyrag2022, autopct='%1.1f%%', startangle=0, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('Gimusiu vaiku skaicius Lietuvoje ir uzsienyje 2022 metais')
     # plt.show()
+
+
+    # # 4.Uzsienio salyse gimusiu vaiku skaiciu palyginimas
+    # x = np.array(list_of_years)
+    # y8 = np.array(list_of_GBR)
+    # y9 = np.array(list_of_NOR)
+    # y10 = np.array(list_of_DE)
+    # y11 = np.array(list_of_IRL)
+    # y12 = np.array(list_of_RUS)
+    # y13 = np.array(list_of_SWE)
+    # y14 = np.array(list_of_ESP)
+    # y15 = np.array(list_of_USA)
+    # y16 = np.array(list_of_OC)
+    #
+    # plt.plot(x, y8, color = '#011efe', label = 'D.Britanija')
+    # plt.plot(x, y9, color = '#fe00f6', label = 'Norvegija')
+    # plt.plot(x, y10, color='#000000', label='Vokietija')
+    # plt.plot(x, y11, color='#008744', label='Airija')
+    # plt.plot(x, y12, color='#ff0000', label='Rusija')
+    # plt.plot(x, y13, color='#071d54', label='Švedija')
+    # plt.plot(x, y14, color='#ff7400', label='Ispanija')
+    # plt.plot(x, y15, color='#0c6d63', label='JAV')
+    # plt.plot(x, y16, color='#002d66', label='Kitos')
+    #
+    # plt.title('Užsienio šalyse gimusių vaikų skaičių palyginimas')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Gimusių vaikų skaičius')
+    # plt.legend()
+    # plt.show()
+
+
+    # # 5.Bendro mirusių per metus žmonių skaičiaus kitimas
+    #
+    # # linijjine ir stulpeline diagrama
+    # x = np.array(list_of_years)
+    # y17 = np.array(list_of_mireviso)
+    # font1 = {'family': 'sans', 'color': '#120917', 'size': 14}
+    # font2 = {'family': 'sans', 'color': '#120917', 'size': 12}
+    # plt.plot(x, y17, color='#120917', marker='o', linewidth='2', label='Bendras mirusių žmonių skaičius')
+    # plt.bar(x, y17, color = "#4a2f37", width = 0.4)
+    # plt.title('Bendro mirusių per metus žmonių skaičiaus kitimas', fontdict=font1)
+    # plt.xlabel('Metai', fontdict=font2)
+    # plt.ylabel('Mirusių žmonių skaičius', fontdict=font2)
+    # plt.legend()
+    # plt.show()
+
+
+    # # 6. Mirusiu zmoniu skaiciaus palyginimas pagal lyti
+    #
+    # x = np.array(list_of_years)
+    # y18 = np.array(list_of_mirev)
+    # y19 = np.array(list_of_mirem)
+    # mirev2018 = (y18[0])
+    # mirem2018 = (y19[0])
+    # mirev2019 = (y18[1])
+    # mirem2019 = (y19[1])
+    # mirev2020 = (y18[2])
+    # mirem2020 = (y19[2])
+    # mirev2021 = (y18[3])
+    # mirem2021 = (y19[3])
+    # mirev2022 = (y18[4])
+    # mirem2022 = (y19[4])
+    #
+    # # 2018 m. skaiciu palyginimas
+    # mire2018 = np.array([mirev2018, mirem2018])
+    # fig, ax = plt.subplots()
+    # myexplode = [0.1, 0]
+    # mycolors = ["#0b2a75", "#c4121a"]
+    # ax.pie(mire2018, labels=mire2018, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
+    # ax.axis('equal')
+    # plt.title('2018 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.show()
+    #
+    # # 2019 m. skaiciu palyginimas
+    # mire2019 = np.array([mirev2019, mirem2019])
+    # fig, ax = plt.subplots()
+    # myexplode = [0.1, 0]
+    # mycolors = ["#006991", "#ff3030"]
+    # ax.pie(mire2019, labels=mire2019, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
+    # ax.axis('equal')
+    # plt.title('2019 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.show()
+    #
+    # # 2020 m. skaiciu palyginimas
+    # mire2020 = np.array([mirev2020, mirem2020])
+    # fig, ax = plt.subplots()
+    # myexplode = [0.1, 0]
+    # mycolors = ["#9200ff", "#ffb3ba"]
+    # ax.pie(mire2020, labels=mire2020, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
+    # ax.axis('equal')
+    # plt.title('2020 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.show()
+    #
+    # # 2021 m. skaiciu palyginimas
+    # mire2021 = np.array([mirev2021, mirem2021])
+    # fig, ax = plt.subplots()
+    # myexplode = [0.1, 0]
+    # mycolors = ["#6aa84f", "#fce069"]
+    # ax.pie(mire2021, labels=mire2021, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
+    # ax.axis('equal')
+    # plt.title('2021 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.show()
+    #
+    # # 2022 m. skaiciu palyginimas
+    # mire2022 = np.array([mirev2022, mirem2022])
+    # fig, ax = plt.subplots()
+    # myexplode = [0.1, 0]
+    # mycolors = ["#247b61", "#ff8c14"]
+    # ax.pie(mire2022, labels=mire2022, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
+    # ax.axis('equal')
+    # plt.title('2022 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.show()
+
+
+    # 7.Mirusių žmonių skaičiaus kitimo tyrimas pagal amziaus grupes
+
+
+
+    # plt.subplot(3, 1, 1)
+    # plt.plot(x, y17)
+    #
+    # plt.subplot(3, 1, 2)
+    # plt.plot(x, y18)
+    #
+    # plt.subplot(3, 1, 3)
+    # plt.plot(x, y19)
+    #
+    # plt.show()
+
+
 
 
 def main():
