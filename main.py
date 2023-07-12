@@ -1,9 +1,7 @@
 # Baigiamasis darbas
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-# from colorama import init, Fore, Back, Style
 
 def load_data(file):
     data = pd.read_csv(file, encoding='utf-8')
@@ -35,6 +33,7 @@ def load_data(file):
     list_of_mire99 = data['mire_81_99'].to_list()
     list_of_infekcija = data['infekcija'].to_list()
     list_of_navikai = data['navikai'].to_list()
+    list_of_diabetas = data['diabetas'].to_list()
     list_of_kraujotaka = data['kraujotaka'].to_list()
     list_of_kvepavimo = data['kvepavimo'].to_list()
     list_of_virskinimo = data['virskinimo'].to_list()
@@ -46,6 +45,7 @@ def load_data(file):
     list_of_savizudybe = data['savizudybe'].to_list()
     list_of_nuzudymas = data['nuzudymas'].to_list()
     list_of_kitospr = data['kitos_priezastys'].to_list()
+    list_of_covid = data['covid'].to_list()
 
 
     # # 1.Gimdanciu moteru amziaus diagrama
@@ -203,7 +203,7 @@ def load_data(file):
     # mire2018 = np.array([mirev2018, mirem2018])
     # fig, ax = plt.subplots()
     # myexplode = [0.1, 0]
-    # mycolors = ["#0b2a75", "#c4121a"]
+    # mycolors = ['#0b2a75', '#c4121a']
     # ax.pie(mire2018, labels=mire2018, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2018 metais mirusių vyrų ir moterų skaičiaus palyginimas')
@@ -213,7 +213,7 @@ def load_data(file):
     # mire2019 = np.array([mirev2019, mirem2019])
     # fig, ax = plt.subplots()
     # myexplode = [0.1, 0]
-    # mycolors = ["#006991", "#ff3030"]
+    # mycolors = ['#006991', '#ff3030']
     # ax.pie(mire2019, labels=mire2019, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2019 metais mirusių vyrų ir moterų skaičiaus palyginimas')
@@ -223,7 +223,7 @@ def load_data(file):
     # mire2020 = np.array([mirev2020, mirem2020])
     # fig, ax = plt.subplots()
     # myexplode = [0.1, 0]
-    # mycolors = ["#9200ff", "#ffb3ba"]
+    # mycolors = ['#9200ff', '#ffb3ba']
     # ax.pie(mire2020, labels=mire2020, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2020 metais mirusių vyrų ir moterų skaičiaus palyginimas')
@@ -233,7 +233,7 @@ def load_data(file):
     # mire2021 = np.array([mirev2021, mirem2021])
     # fig, ax = plt.subplots()
     # myexplode = [0.1, 0]
-    # mycolors = ["#6aa84f", "#fce069"]
+    # mycolors = ['#6aa84f', '#fce069']
     # ax.pie(mire2021, labels=mire2021, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2021 metais mirusių vyrų ir moterų skaičiaus palyginimas')
@@ -243,29 +243,117 @@ def load_data(file):
     # mire2022 = np.array([mirev2022, mirem2022])
     # fig, ax = plt.subplots()
     # myexplode = [0.1, 0]
-    # mycolors = ["#247b61", "#ff8c14"]
+    # mycolors = ['#247b61', '#ff8c14']
     # ax.pie(mire2022, labels=mire2022, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2022 metais mirusių vyrų ir moterų skaičiaus palyginimas')
     # plt.show()
 
 
-    # 7.Mirusių žmonių skaičiaus kitimo tyrimas pagal amziaus grupes
-
-
-
+    # # 7.Mirusių žmonių skaičiaus kitimo tyrimas pagal amziaus grupes
+    #
+    # x = np.array(list_of_years)
+    # y17 = np.array(list_of_mireviso)
+    # y20 = np.array(list_of_mire18)
+    # y21 = np.array(list_of_mire40)
+    # y22 = np.array(list_of_mire60)
+    # y23 = np.array(list_of_mire80)
+    # y24 = np.array(list_of_mire99)
+    #
+    # # Bendras mirciu skaicius
+    # plt.figure(figsize=(10, 6))
+    # plt.plot(x, y17, color='#e80000', marker='o', linewidth='2.5', label='Bendras mirusių žmonių skaičius')
+    # plt.title('Bendro mirusių per metus žmonių skaičiaus kitimas')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Mirusių žmonių skaičius')
+    # plt.legend()
+    # plt.grid()
+    # plt.show()
+    #
+    # # Zmoniu nuo 0 iki 60 metu mirtingumas
+    # plt.figure(figsize=(10, 12))
     # plt.subplot(3, 1, 1)
-    # plt.plot(x, y17)
-    #
+    # plt.plot(x, y20, marker='o', color='#e80000', linewidth='2.5')
+    # plt.title('Nuo 0 iki 18 metų', loc = 'left')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Mirusių žmonių skaičius')
+    # plt.grid()
     # plt.subplot(3, 1, 2)
-    # plt.plot(x, y18)
-    #
+    # plt.plot(x, y21, marker='o', color='#e80000', linewidth='2.5')
+    # plt.title('Nuo 19 iki 40 metų', loc = 'left')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Mirusių žmonių skaičius')
+    # plt.grid()
     # plt.subplot(3, 1, 3)
-    # plt.plot(x, y19)
+    # plt.plot(x, y22, marker='o', color='#e80000', linewidth='2.5')
+    # plt.title('Nuo 41 iki 60 metų', loc = 'left')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Mirusių žmonių skaičius')
+    # plt.grid()
+    # plt.suptitle('Žmonių iki 60 metų mirtingumas Lietuvoje')
+    # plt.show()
     #
+    # # Zmoniu vyresniu nei 60 metu mirtingumas
+    # plt.figure(figsize=(10, 10))
+    # plt.subplot(2, 1, 1)
+    # plt.plot(x, y23, marker='o', color='#990000', linewidth='2.5')
+    # plt.title('Nuo 61 iki 80 metų', loc = 'left')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Mirusių žmonių skaičius')
+    # plt.grid()
+    # plt.subplot(2, 1, 2)
+    # plt.plot(x, y24, marker='o', color='#990000', linewidth='2.5')
+    # plt.title('Vyresnių nei 80 metų', loc = 'left')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Mirusių žmonių skaičius')
+    # plt.grid()
+    # plt.suptitle('Žmonių vyresnių nei 60 metų mirtingumas Lietuvoje')
     # plt.show()
 
 
+    # # 8.Lietuvos zmoniu mirtingumas pagal mirties priezasti
+    #
+    # x = np.array(list_of_years)
+    # y25 = np.array(list_of_infekcija)
+    # y26 = np.array(list_of_navikai)
+    # y27 = np.array(list_of_diabetas)
+    # y28 = np.array(list_of_kraujotaka)
+    # y29 = np.array(list_of_kvepavimo)
+    # y30 = np.array(list_of_virskinimo)
+    # y31 = np.array(list_of_isorpr)
+    # y32 = np.array(list_of_transp)
+    # y33 = np.array(list_of_nukritimai)
+    # y34 = np.array(list_of_paskendimas)
+    # y35 = np.array(list_of_alkoholis)
+    # y36 = np.array(list_of_savizudybe)
+    # y37 = np.array(list_of_nuzudymas)
+    # y38 = np.array(list_of_kitospr)
+    # y39 = np.array(list_of_covid)
+    #
+    # x_axis = np.arange(len(x))
+    # plt.figure(figsize=(16, 7))
+    # plt.bar(x_axis + 0.06, y25, width=0.06, label='Infekcinės ligos')
+    # plt.bar(x_axis + 0.06 * 2, y26, width=0.06, label='Piktybiniai navikai')
+    # plt.bar(x_axis + 0.06 * 3, y27, width=0.06, label='Cukrinis diabetas')
+    # plt.bar(x_axis + 0.06 * 4, y28, width=0.06, label='Kraujotakos ligos')
+    # plt.bar(x_axis + 0.06 * 5, y29, width=0.06, label='Kvėpavimo ligos')
+    # plt.bar(x_axis + 0.06 * 6, y30, width=0.06, label='Virškinimo ligos')
+    # plt.bar(x_axis + 0.06 * 7, y31, width=0.06, label='Išorinės priežastys')
+    # plt.bar(x_axis + 0.06 * 8, y32, width=0.06, label='Transporto įvykiai')
+    # plt.bar(x_axis + 0.06 * 9, y33, width=0.06, label='Nukritimai')
+    # plt.bar(x_axis + 0.06 * 10, y34, width=0.06, label='Paskendimas')
+    # plt.bar(x_axis + 0.06 * 11, y35, width=0.06, label='Alkoholio poveikis')
+    # plt.bar(x_axis + 0.06 * 12, y36, width=0.06, label='Savižudybė')
+    # plt.bar(x_axis + 0.06 * 13, y37, width=0.06, label='Nužudymas')
+    # plt.bar(x_axis + 0.06 * 14, y38, width=0.06, label='Kitos priežastys')
+    # plt.bar(x_axis + 0.06 * 15, y39, width=0.06, label='Covid-19')
+    #
+    # plt.xticks(x_axis, x)
+    # plt.title('Mirusių žmonių statistika pagal mirties priežastį')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Mirusių žmonių skaičius')
+    # plt.legend()
+    # plt.show()
 
 
 def main():
