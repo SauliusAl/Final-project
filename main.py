@@ -1,4 +1,6 @@
 # Baigiamasis darbas
+# Projekto tema: Gimusių ir mirusių analizė Lietuvoje
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -46,9 +48,14 @@ def load_data(file):
     list_of_nuzudymas = data['nuzudymas'].to_list()
     list_of_kitospr = data['kitos_priezastys'].to_list()
     list_of_covid = data['covid'].to_list()
+    list_of_gyvsk = data['gyv_skaic'].to_list()
+    list_of_gimproc = data['gimst_proc'].to_list()
+    list_of_mirproc = data['mirt_proc'].to_list()
+    list_of_pokyt = data['pokyt_proc'].to_list()
 
 
     # # 1.Gimdanciu moteru amziaus diagrama
+    #
     # x = np.array(list_of_years)
     # y1 = np.array(list_of_vma)
     # y2 = np.array(list_of_vap)
@@ -61,11 +68,21 @@ def load_data(file):
     # plt.show()
 
 
-    # # 2.Gimusiu vaiku skaiciaus diagrama
+    # # 2.Gimusiu vaiku skaiciaus analize
+    #
     # x = np.array(list_of_years)
+    # y0 = np.array(list_of_gyvsk)
     # y3 = np.array(list_of_gimev)
     # y4 = np.array(list_of_gimeb)
     # y5 = np.array(list_of_gimem)
+    # gim_5m_suma = np.sum(y3)
+    # gim_5m_min = np.min(y3)
+    # gim_5m_max = np.max(y3)
+    # gim_5m_avg = np.average(y3)
+    # print(f'Suminis 2018-2022 metais gimusių vaikų skaičius yra: {gim_5m_suma}')
+    # print(f'2018-2022 metais mažiausiai ({gim_5m_min}) vaikų gimė {x} metais')
+    # print(f'2018-2022 metais daugiausiai ({gim_5m_max}) vaikų gimė {x} metais')
+    # print(f'2018-2022 metais vidutiniškai per metus gimdavo {int(gim_5m_avg)} vaikų')
     # plt.plot(x, y3, color = '#8a2be2', marker = 'o', label = 'Bendras')
     # plt.plot(x, y4, marker = 'o', label = 'Berniukai')
     # plt.plot(x, y5, marker = 'o', color='#fb607f', label='Mergaitės')
@@ -75,9 +92,24 @@ def load_data(file):
     # plt.legend()
     # plt.grid()
     # plt.show()
+    #
+    # # Gimimu metinis procentinis rodiklis, vertinant salies gyventoju skaiciu
+    # gimimu_metinis_pokytis = (y3 / y0) * 100
+    # print(f'2018 metų gimimų procentinis rodiklis: {round(gimimu_metinis_pokytis[0], 2)} %')
+    # print(f'2019 metų gimimų procentinis rodiklis: {round(gimimu_metinis_pokytis[1], 2)} %')
+    # print(f'2020 metų gimimų procentinis rodiklis: {round(gimimu_metinis_pokytis[2], 2)} %')
+    # print(f'2021 metų gimimų procentinis rodiklis: {round(gimimu_metinis_pokytis[3], 2)} %')
+    # print(f'2022 metų gimimų procentinis rodiklis: {round(gimimu_metinis_pokytis[4], 2)} %')
+    # plt.plot(x, gimimu_metinis_pokytis, color='#8a2be2', marker='o')
+    # plt.title('Procentinio metinio gimimų rodiklio kitimas')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Gimimų procentinis rodiklis %')
+    # plt.grid()
+    # plt.show()
 
 
     # # 3.Gimusiu vaiku uzsienyje skaiciaus palyginimas su gimusiais Lietuvoje
+    #
     # x = np.array(list_of_years)
     # y6 = np.array(list_of_LT)
     # y7 = np.array(list_of_uzs)
@@ -138,8 +170,10 @@ def load_data(file):
     # plt.show()
 
 
-    # # 4.Uzsienio salyse gimusiu vaiku skaiciu palyginimas
+    # # 4.Uzsienio salyse gimusiu vaiku skaiciu analize
+    #
     # x = np.array(list_of_years)
+    # y7 = np.array(list_of_uzs)
     # y8 = np.array(list_of_GBR)
     # y9 = np.array(list_of_NOR)
     # y10 = np.array(list_of_DE)
@@ -149,7 +183,9 @@ def load_data(file):
     # y14 = np.array(list_of_ESP)
     # y15 = np.array(list_of_USA)
     # y16 = np.array(list_of_OC)
-    #
+
+    # gim_uzs_5m_suma = np.sum(y7)
+    # print(f'2018-2022 metais užsienyje gimusių lietuvių vaikų skaičius yra: {gim_uzs_5m_suma}')
     # plt.plot(x, y8, color = '#011efe', label = 'D.Britanija')
     # plt.plot(x, y9, color = '#fe00f6', label = 'Norvegija')
     # plt.plot(x, y10, color='#000000', label='Vokietija')
@@ -159,7 +195,6 @@ def load_data(file):
     # plt.plot(x, y14, color='#ff7400', label='Ispanija')
     # plt.plot(x, y15, color='#0c6d63', label='JAV')
     # plt.plot(x, y16, color='#002d66', label='Kitos')
-    #
     # plt.title('Užsienio šalyse gimusių vaikų skaičių palyginimas')
     # plt.xlabel('Metai')
     # plt.ylabel('Gimusių vaikų skaičius')
@@ -167,19 +202,42 @@ def load_data(file):
     # plt.show()
 
 
-    # # 5.Bendro mirusių per metus žmonių skaičiaus kitimas
+    # # 5.Bendro mirusių per metus žmonių skaičiaus analize
     #
     # # linijjine ir stulpeline diagrama
     # x = np.array(list_of_years)
     # y17 = np.array(list_of_mireviso)
-    # font1 = {'family': 'sans', 'color': '#120917', 'size': 14}
-    # font2 = {'family': 'sans', 'color': '#120917', 'size': 12}
-    # plt.plot(x, y17, color='#120917', marker='o', linewidth='2', label='Bendras mirusių žmonių skaičius')
-    # plt.bar(x, y17, color = "#4a2f37", width = 0.4)
+    # mirc_5m_suma = np.sum(y17)
+    # mirc_5m_min = np.min(y17)
+    # mirc_5m_max = np.max(y17)
+    # mirc_5m_avg = np.average(y17)
+    # print(f'2018-2022 metais mirusių žmonių skaičius yra: {mirc_5m_suma}')
+    # print(f'2018-2022 metais mažiausiai ({mirc_5m_min}) žmonių mirė {x} metais')
+    # print(f'2018-2022 metais daugiausiai ({mirc_5m_max}) žmonių mirė {x} metais')
+    # print(f'2018-2022 metais vidutiniškai per metus mirdavo {int(mirc_5m_avg)} žmonių')
+    # font1 = {'family': 'sans', 'color': '#000000', 'size': 14}
+    # font2 = {'family': 'sans', 'color': '#000000', 'size': 12}
+    # plt.plot(x, y17, color='#000000', marker='o', linewidth='2', label='Bendras mirusių žmonių skaičius')
+    # plt.bar(x, y17, color = '#666666', width = 0.4)
     # plt.title('Bendro mirusių per metus žmonių skaičiaus kitimas', fontdict=font1)
     # plt.xlabel('Metai', fontdict=font2)
     # plt.ylabel('Mirusių žmonių skaičius', fontdict=font2)
     # plt.legend()
+    # plt.show()
+
+    # # Mirciu metinis procentinis rodiklis, vertinant salies gyventoju skaiciu
+    # y0 = np.array(list_of_gyvsk)
+    # mirciu_metinis_pokytis = (y17 / y0) * 100
+    # print(f'2018 metų mirčių procentinis rodiklis: {round(mirciu_metinis_pokytis[0], 2)} %')
+    # print(f'2019 metų mirčių procentinis rodiklis: {round(mirciu_metinis_pokytis[1], 2)} %')
+    # print(f'2020 metų mirčių procentinis rodiklis: {round(mirciu_metinis_pokytis[2], 2)} %')
+    # print(f'2021 metų mirčių procentinis rodiklis: {round(mirciu_metinis_pokytis[3], 2)} %')
+    # print(f'2022 metų mirčių procentinis rodiklis: {round(mirciu_metinis_pokytis[4], 2)} %')
+    # plt.plot(x, mirciu_metinis_pokytis, color='#800000', marker='o')
+    # plt.title('Procentinio metinio mirčių rodiklio kitimas')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Mirčių procentinis rodiklis %')
+    # plt.grid()
     # plt.show()
 
 
@@ -207,6 +265,7 @@ def load_data(file):
     # ax.pie(mire2018, labels=mire2018, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2018 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.legend(['Vyrai', 'Moterys'])
     # plt.show()
     #
     # # 2019 m. skaiciu palyginimas
@@ -217,6 +276,7 @@ def load_data(file):
     # ax.pie(mire2019, labels=mire2019, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2019 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.legend(['Vyrai', 'Moterys'])
     # plt.show()
     #
     # # 2020 m. skaiciu palyginimas
@@ -227,6 +287,7 @@ def load_data(file):
     # ax.pie(mire2020, labels=mire2020, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2020 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.legend(['Vyrai', 'Moterys'])
     # plt.show()
     #
     # # 2021 m. skaiciu palyginimas
@@ -237,6 +298,7 @@ def load_data(file):
     # ax.pie(mire2021, labels=mire2021, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2021 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.legend(['Vyrai', 'Moterys'])
     # plt.show()
     #
     # # 2022 m. skaiciu palyginimas
@@ -247,6 +309,7 @@ def load_data(file):
     # ax.pie(mire2022, labels=mire2022, colors = mycolors, autopct='%1.1f%%', startangle=90, explode = myexplode, shadow = True)
     # ax.axis('equal')
     # plt.title('2022 metais mirusių vyrų ir moterų skaičiaus palyginimas')
+    # plt.legend(['Vyrai', 'Moterys'])
     # plt.show()
 
 
@@ -329,6 +392,37 @@ def load_data(file):
     # y37 = np.array(list_of_nuzudymas)
     # y38 = np.array(list_of_kitospr)
     # y39 = np.array(list_of_covid)
+    # mirc_infekc_suma = np.sum(y25)
+    # mirc_navik_suma = np.sum(y26)
+    # mirc_diabet_suma = np.sum(y27)
+    # mirc_krauj_suma = np.sum(y28)
+    # mirc_kvepav_suma = np.sum(y29)
+    # mirc_virskin_suma = np.sum(y30)
+    # mirc_isorpr_suma = np.sum(y31)
+    # mirc_transp_suma = np.sum(y32)
+    # mirc_nukrit_suma = np.sum(y33)
+    # mirc_paskend_suma = np.sum(y34)
+    # mirc_alkoh_suma = np.sum(y35)
+    # mirc_savizud_suma = np.sum(y36)
+    # mirc_nuzud_suma = np.sum(y37)
+    # mirc_kitospr_suma = np.sum(y38)
+    # mirc_covid_suma = np.sum(y39)
+    #
+    # print(f'2018-2022 metais nuo infekcinių ligų mirė {mirc_infekc_suma} žmonės')
+    # print(f'2018-2022 metais nuo piktybinių navikų ligų mirė {mirc_navik_suma} žmonės')
+    # print(f'2018-2022 metais nuo cukrinio diabeto komplikacijų mirė {mirc_diabet_suma} žmonės')
+    # print(f'2018-2022 metais nuo kraujotakos sistemos ligų mirė {mirc_krauj_suma} žmonės')
+    # print(f'2018-2022 metais nuo kvėpavimo sistemos ligų mirė {mirc_kvepav_suma} žmonės')
+    # print(f'2018-2022 metais nuo virškinimo sistemos ligų mirė {mirc_virskin_suma} žmonės')
+    # print(f'2018-2022 metais nuo išorinių priežasčių mirė {mirc_isorpr_suma} žmonės')
+    # print(f'2018-2022 metais nuo transporto įvykių mirė {mirc_transp_suma} žmonės')
+    # print(f'2018-2022 metais nuo nukritimų mirė {mirc_nukrit_suma} žmonės')
+    # print(f'2018-2022 metais nuo netyčinių paskendimų mirė {mirc_paskend_suma} žmonės')
+    # print(f'2018-2022 metais nuo alkoholio sukeltų komplikacijų mirė {mirc_alkoh_suma} žmonės')
+    # print(f'2018-2022 metais nusižudė {mirc_savizud_suma} žmonių')
+    # print(f'2018-2022 metais buvo nužudyti {mirc_nuzud_suma} žmonės')
+    # print(f'2018-2022 metais nuo kitų priežasčių mirė {mirc_kitospr_suma} žmonės')
+    # print(f'2018-2022 metais nuo Covid-19 mirė {mirc_covid_suma} žmonių')
     #
     # x_axis = np.arange(len(x))
     # plt.figure(figsize=(16, 7))
@@ -347,7 +441,6 @@ def load_data(file):
     # plt.bar(x_axis + 0.06 * 13, y37, width=0.06, label='Nužudymas')
     # plt.bar(x_axis + 0.06 * 14, y38, width=0.06, label='Kitos priežastys')
     # plt.bar(x_axis + 0.06 * 15, y39, width=0.06, label='Covid-19')
-    #
     # plt.xticks(x_axis, x)
     # plt.title('Mirusių žmonių statistika pagal mirties priežastį')
     # plt.xlabel('Metai')
@@ -356,10 +449,48 @@ def load_data(file):
     # plt.show()
 
 
+    # # 9.Gimimu ir mirciu bendro rezultato tyrimas
+    #
+    # x = np.array(list_of_years)
+    # y0 = np.array(list_of_gyvsk)
+    # y3 = np.array(list_of_gimev)
+    # y17 = np.array(list_of_mireviso)
+    # rezultatas = y3 - y17
+    # print(f'2018 metų gimimų-mirčių suminis rezultatas: {round(rezultatas[0], 2)}')
+    # print(f'2019 metų gimimų-mirčių suminis rezultatas: {round(rezultatas[1], 2)}')
+    # print(f'2020 metų gimimų-mirčių suminis rezultatas: {round(rezultatas[2], 2)}')
+    # print(f'2021 metų gimimų-mirčių suminis rezultatas: {round(rezultatas[3], 2)}')
+    # print(f'2022 metų gimimų-mirčių suminis rezultatas: {round(rezultatas[4], 2)}')
+    # plt.plot(x, rezultatas, color='#8a2be2', marker='o', linewidth='3')
+    # plt.title('Metinio gimimo-mirčių rezultato kitimas')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Metinis gimimų-mirčių rezultatas')
+    # plt.grid()
+    # plt.show()
+    #
+    # gimimu_metinis_pokytis = (y3 / y0) * 100
+    # mirciu_metinis_pokytis = (y17 / y0) * 100
+    # rezultatas_proc = gimimu_metinis_pokytis - mirciu_metinis_pokytis
+    # print(f'2018 metų gimimų-mirčių suminis procentinis rodiklis: {round(rezultatas_proc[0], 2)} %')
+    # print(f'2019 metų gimimų-mirčių suminis procentinis rodiklis: {round(rezultatas_proc[1], 2)} %')
+    # print(f'2020 metų gimimų-mirčių suminis procentinis rodiklis: {round(rezultatas_proc[2], 2)} %')
+    # print(f'2021 metų gimimų-mirčių suminis procentinis rodiklis: {round(rezultatas_proc[3], 2)} %')
+    # print(f'2022 metų gimimų-mirčių suminis procentinis rodiklis: {round(rezultatas_proc[4], 2)} %')
+    # plt.plot(x, rezultatas_proc, color='#8a2be2', marker='o', linewidth='3', label='Rodiklis')
+    # plt.title('Gimimų-mirčių suminio procentinio rodiklio kitimas')
+    # plt.xlabel('Metai')
+    # plt.ylabel('Gimimų-mirčių suminis procentinis rodiklis %')
+    # tendencija = np.polyfit(x, rezultatas_proc, 1)
+    # prognoze = np.polyval(tendencija, x)
+    # plt.plot(x, prognoze, color='red', label='Prognozė')
+    # plt.legend()
+    # plt.grid()
+    # plt.show()
+
+
 def main():
     file = 'gimst_mirstam.csv'
     data = load_data(file)
-
 if __name__ == '__main__':
     main()
 
