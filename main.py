@@ -488,6 +488,7 @@ def load_data(file):
     # plt.show()
 
 
+
 def main():
     file = 'gimst_mirstam.csv'
     data = load_data(file)
