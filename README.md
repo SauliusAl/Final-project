@@ -1,5 +1,5 @@
 **_Final-project_**
-Projekto Autoriai:
+Projekto autoriai:
 Saulius Stankevičius,
 Saulius Aleksa
 
