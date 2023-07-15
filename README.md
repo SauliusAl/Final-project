@@ -75,10 +75,10 @@ tai yra 2,8 proc. mažiau nei 2021 m. ir 10,5 proc. mažiau nei 2018 m. Mirtingu
 
 Ši tendencija yra susijusi su keliais veiksniais, įskaitant:
 
--Vyresnė populiacija. Lietuvos gyventojai sensta, o tai reiškia, kad miršta daugiau žmonių nei gimsta.
--Sumažėjęs gimstamumas. Lietuvos gimstamumas mažėja jau keletą metų. Tai susiję su įvairiais veiksniais, įskaitant 
+- Vyresnė populiacija. Lietuvos gyventojai sensta, o tai reiškia, kad miršta daugiau žmonių nei gimsta.
+- Sumažėjęs gimstamumas. Lietuvos gimstamumas mažėja jau keletą metų. Tai susiję su įvairiais veiksniais, įskaitant 
 ekonomikos sunkumus, darbo rinkos nestabilumą ir moterų sveikatos priežiūros prieinamumą.
--Padidėjusi emigracija. Daugelis jaunų žmonių iš Lietuvos išvyksta ieškoti geresnio gyvenimo kitose šalyse. 
+- Padidėjusi emigracija. Daugelis jaunų žmonių iš Lietuvos išvyksta ieškoti geresnio gyvenimo kitose šalyse. 
 Tai mažina šalies gyventojų skaičių ir taip pat turi įtakos gimstamumui.
 
 Be to demografinė padėtis skaudžiai keičiasi regionuose. Gyventojai nuolat iš rajonų keliasi į didesnius miestus ar 
