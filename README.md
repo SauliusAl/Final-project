@@ -21,8 +21,8 @@ grafiškai ir pristatyti išvadas.
 
 **Techniniai reikalavimai**
 
-Projekto atlikimui reikia pasinaudoti: "pandas", "numpy", "matplotlib" ar "seaborn" bibliotekomis. Siekiant atlikti išsamią 
-analizę, reikia naudotis Git biblioteka. Projekto metu reikia atlikti šiuos veiksmus:
+Projekto atlikimui reikia pasinaudoti: "pandas", "numpy", "matplotlib" ar "seaborn" bibliotekomis. Siekiant atlikti  
+išsamią analizę, reikia naudotis Git biblioteka. Projekto metu reikia atlikti šiuos veiksmus:
 1) Duomenų rinkimą;
 2) Duomenų valymą ir transformaciją;
 3) Statistinę analizę;
@@ -50,8 +50,8 @@ skiltyje, duomenų transformacija buvo atlikta csv formatu į Python programą.
 
 **Duomenų vizualizacija**
 
-Matplotlib bibliotekos pagalba buvo kuriamos reikiamos diagramos (line, pie, bar), turimas sąrašas išskaidomas į atskirus elementus,
-kad pritaikius sąrašo indeksus galėtume palyginti vieno sąrašo elementą su kito sąrašo elementu.
+Matplotlib bibliotekos pagalba buvo kuriamos reikiamos diagramos (line, pie, bar), turimas sąrašas išskaidomas
+į atskirus elementus, kad pritaikius sąrašo indeksus galėtume palyginti vieno sąrašo elementą su kito sąrašo elementu.
 Projekto metu buvo sukurtos šios diagramos:
 - gimusių vaikų analizė (dvi linijinės diagramos (skaitinė išraiška ir procentinė išraiška nuo bendro gyventojų skaičiaus));
 - gimusių lietuvių vaikų užsienyje duomenų analizė, bei palyginimas su vaikų gimimu Lietuvoje (penkios pie diagramos);
@@ -68,17 +68,24 @@ Projekto metu buvo sukurtos šios diagramos:
 
 **Išvados**
 
-Atlikome Lietuvos gyventojų 2018 - 2022 metų gimimo ir mirties analizę. Iš atrinktų duomenų galima daryti bendrines
-išvadas, kad gyventojų skaičius Lietuvoje tendencingai mažėja. Iš pateiktų vizualiai matomų duomenų matyti, kad 
-bendras gimimo - mirčių balansas yra neigiams, t.y. šalies gyventojų mirtingumas kiekvienais metais auga, o gimstamumas
-atvirkščiai - mažėja. Viena vertus, tai susiję su mažu suminiu gimstamumo rodikliu, t.y. rodikliu, kiek vidutiniškai
-viena moteris pagimdo vaikų. Kita vertus, yra bendras gyventojų skaičiaus mažėjimas, kuris dalinai susijęs ir su emigracija,
-ir su ekonominiais šalies rodikliais.
-Tuo tarpu mirusiųjų gyventojų skaičius gana didelis ir jis didėja kiekvienais metais. Tiesa, 2020-2022 metų mirčių rodiklius
-koregavo nauja liga - Covid-19 pandemija.
-Demografinė padėtis skaudžiai keičiasi regionuose. Gyventojai nuolat iš rajonų keliasi į didesnius miestus ar aplamai
-emigruoja. tai susiję su darbo trūkumu regionuose.
+Atlikome Lietuvos gyventojų 2018 - 2022 metų gimimo ir mirties analizę. 
+Remiantis pateikta informacija, Lietuvoje 2018-2022 metais gimsta vis mažiau vaikų. 2022 m. gimė 27 967 kūdikiai, 
+tai yra 2,8 proc. mažiau nei 2021 m. ir 10,5 proc. mažiau nei 2018 m. Mirtingumas taip pat didėja. 
+2022 m. mirė 54 455 žmonės, tai yra 2,2 proc. daugiau nei 2021 m. ir 4,6 proc. daugiau nei 2018 m.
+
+Ši tendencija yra susijusi su keliais veiksniais, įskaitant:
+
+-Vyresnė populiacija. Lietuvos gyventojai sensta, o tai reiškia, kad miršta daugiau žmonių nei gimsta.
+-Sumažėjęs gimstamumas. Lietuvos gimstamumas mažėja jau keletą metų. Tai susiję su įvairiais veiksniais, įskaitant 
+ekonomikos sunkumus, darbo rinkos nestabilumą ir moterų sveikatos priežiūros prieinamumą.
+-Padidėjusi emigracija. Daugelis jaunų žmonių iš Lietuvos išvyksta ieškoti geresnio gyvenimo kitose šalyse. 
+Tai mažina šalies gyventojų skaičių ir taip pat turi įtakos gimstamumui.
+
+Be to demografinė padėtis skaudžiai keičiasi regionuose. Gyventojai nuolat iš rajonų keliasi į didesnius miestus ar 
+emigruoja. Tai susiję su darbo trūkumu regionuose.
 Nors šis tiriamasis - analitinis projektas nepalietė tokių temų, kaip politiniai ar ekonominiai veiksniai gyventojų
-demografijos klausimais, galima daryti prielaidą, kad šie veiksniai iš esmės yra kertiniai ir gali žymiai koreguoti bendrą 
+demografijos klausimais, galima daryti prielaidą, kad šie veiksniai iš esmės yra kertiniai ir gali koreguoti  
 situaciją tiek Lietuvoje, tiek ir atskiruose regionuose.
 
+Situacija Lietuvoje nėra unikali. Daugelis kitų Europos šalių taip pat susiduria su panašiais iššūkiais. 
+Ši tendencija greičiausiai tęsis ir ateityje, o tai turės rimtų pasekmių šalių ekonomikai ir socialinei gerovei.
