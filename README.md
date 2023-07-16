@@ -23,11 +23,11 @@ grafiškai ir pristatyti išvadas.
 
 Projekto atlikimui reikia pasinaudoti: "pandas", "numpy", "matplotlib" ar "seaborn" bibliotekomis. Siekiant atlikti  
 išsamią analizę, reikia naudotis Git biblioteka. Projekto metu reikia atlikti šiuos veiksmus:
-1) Duomenų rinkimą;
-2) Duomenų valymą ir transformaciją;
-3) Statistinę analizę;
-4) Vizualizaciją;
-5) Pateikti išvadas.
+1) Duomenų rinkimas;
+2) Duomenų valymas ir transformacija;
+3) Statistinė analizė;
+4) Vizualizacija;
+5) išvados.
 
 **Duomenų rinkimas ir analizė**
 
@@ -53,17 +53,17 @@ skiltyje, duomenų transformacija buvo atlikta csv formatu į Python programą.
 Matplotlib bibliotekos pagalba buvo kuriamos reikiamos diagramos (line, pie, bar), turimas sąrašas išskaidomas
 į atskirus elementus, kad pritaikius sąrašo indeksus galėtume palyginti vieno sąrašo elementą su kito sąrašo elementu.
 Projekto metu buvo sukurtos šios diagramos:
+- vidutinio gimdančių moterų amžiaus analizė (viena linijinė diagrama);
 - gimusių vaikų analizė (dvi linijinės diagramos (skaitinė išraiška ir procentinė išraiška nuo bendro gyventojų skaičiaus));
-- gimusių lietuvių vaikų užsienyje duomenų analizė, bei palyginimas su vaikų gimimu Lietuvoje (penkios pie diagramos);
-- vidutinio gimdančių moterų amžiaus vidurkio analizė (viena linijinė diagrama);
+- gimusių lietuvių vaikų užsienyje duomenų analizė (palyginamoji linijinė diagrama), 
+  bei palyginimas su vaikų gimimu Lietuvoje (pie diagrama, išvestas 5m vidurkis);
 - užsienyje gimusių vaikų duomenys pagal atskiras šalis (viena linijinė diagrama);
-- bendras mirusiųjų žmonių skaičius kiekvienais metais (viena stulpelinė diagrama);
-- procentinė mirusių žmonių skaičiaus išraiška palygiminui su žmonių skaičiumi Lietuvoje (viena linijinė diagrama);
-- mirusiųjų žmonių išskirstymas pagal lytis kiekvienais metais (penkios pie diagramos);
-- mirčių analizė pagal amžiaus grupes (šešios linijinės diagramos);
-- mirčių analizė pagal pagrindines mirties priežastis (viena stulpelinė diagrama);
-- metinė gimimo-mirčių suminė diagrama (viena linijinė diagrama);
-- gimimo-mirčių suminė procentinė analizė kartu su prognoze (viena linijinė diagrama).
+- 2018-2022m mirusių žmonių Lietuvoje pagal lytį vidurkis (pie diagrama);
+- bendra mirusiųjų žmonių analizė Lietuvoje kiekvienais metais (stulpelinė diagrama);
+- mirčių analizė Lietuvoje pagal amžiaus grupes (penkios linijinės diagramos ir viena pie diagrama);
+- mirčių analizė Lietuvoje pagal mirties priežastis (stulpelinė diagrama, pie diagrama);
+- metinė gimimo-mirčių Lietuvoje suminė diagrama (linijinė diagrama);
+- gimimo-mirčių Lietuvoje suminė procentinė analizė (linijinė diagrama).
 
 
 **Išvados**
