@@ -54,195 +54,195 @@ def load_data(file):
     list_of_pokyt = data['pokyt_proc'].to_list()
 
 
-    # # 1.Gimdanciu moteru amziaus analize - linijine diagrama
+    # 1.Gimdanciu moteru amziaus analize - linijine diagrama
+
+    x = np.array(list_of_years)
+    y1 = np.array(list_of_vma)
+    y2 = np.array(list_of_vap)
+    plt.plot(x, y1, label = 'Visų gimdymų')
+    plt.plot(x, y2, color = 'red', label = 'Pirmagimis')
+    plt.title('Gimdančių moterų vidutinis amžius')
+    plt.xlabel('Metai')
+    plt.ylabel('Moters amžius')
+    plt.legend()
+    plt.xlim([2018-0.25, 2022+0.25])
+    plt.xticks(range(2018, 2023, 1))
+    plt.grid()
+    plt.show()
+
+
+    # 2.Gimusiu vaiku skaiciaus analize
+
+    x = np.array(list_of_years)
+    y0 = np.array(list_of_gyvsk)
+    y3 = np.array(list_of_gimev)
+    y4 = np.array(list_of_gimeb)
+    y5 = np.array(list_of_gimem)
+    gim_5m_suma = np.sum(y3)
+    gim_5m_min = np.min(y3)
+    gim_5m_max = np.max(y3)
+    gim_5m_avg = np.average(y3)
+    gimev2018 = y3[0]
+    gimev2019 = y3[1]
+    gimev2020 = y3[2]
+    gimev2021 = y3[3]
+    gimev2022 = y3[4]
+    gimeb2018 = y4[0]
+    gimeb2019 = y4[1]
+    gimeb2020 = y4[2]
+    gimeb2021 = y4[3]
+    gimeb2022 = y4[4]
+    gimem2018 = y5[0]
+    gimem2019 = y5[1]
+    gimem2020 = y5[2]
+    gimem2021 = y5[3]
+    gimem2022 = y5[4]
+
+    # spausdiname statistinius rodiklius
+    print(f'2018-2022 metais viso gimė {gim_5m_suma} vaikų')
+    print(f'2018-2022 metais mažiausiai ({gim_5m_min}) vaikų gimė 2022 metais')
+    print(f'2018-2022 metais daugiausiai ({gim_5m_max}) vaikų gimė 2018 metais')
+    print(f'2018-2022 metais vidutiniškai per metus gimdavo {int(gim_5m_avg)} vaikų')
+
+    # Linijine gimusiu vaiku diagrama
+
+    plt.plot(x, y3, color='#8a2be2', marker='o', label='Bendras')
+    plt.plot(x, y4, color='#0a75ad', marker='o', label='Berniukai')
+    plt.plot(x, y5, color='#fb607f', marker='o', label='Mergaitės')
+    plt.text(2018-0.1, 26850, gimev2018, fontsize=10, color='#8a2be2')
+    plt.text(2019-0.15, 26000, gimev2019, fontsize=10, color='#8a2be2')
+    plt.text(2020-0.15, 23750, gimev2020, fontsize=10, color='#8a2be2')
+    plt.text(2021-0.15, 22000, gimev2021, fontsize=10, color='#8a2be2')
+    plt.text(2022-0.3, 20700, gimev2022, fontsize=10, color='#8a2be2')
+    plt.text(2018-0.1, 15000, gimeb2018, fontsize=10, color='#0a75ad')
+    plt.text(2019-0.15, 14600, gimeb2019, fontsize=10, color='#0a75ad')
+    plt.text(2020-0.15, 13700, gimeb2020, fontsize=10, color='#0a75ad')
+    plt.text(2021-0.15, 12500, gimeb2021, fontsize=10, color='#0a75ad')
+    plt.text(2022-0.3, 12200, gimeb2022, fontsize=10, color='#0a75ad')
+    plt.text(2018-0.1, 12600, gimem2018, fontsize=10, color='#fb607f')
+    plt.text(2019-0.2, 12200, gimem2019, fontsize=10, color='#fb607f')
+    plt.text(2020-0.2, 10950, gimem2020, fontsize=10, color='#fb607f')
+    plt.text(2021-0.2, 10300, gimem2021, fontsize=10, color='#fb607f')
+    plt.text(2022-0.3, 10000, gimem2022, fontsize=10, color='#fb607f')
+    plt.title('Gimusių vaikų skaičiaus kitimas')
+    plt.xlabel('Metai')
+    plt.ylabel('Gimusių per metus vaikų skaičius')
+    plt.legend()
+    plt.xlim([2018-0.25, 2022+0.25])
+    plt.xticks(range(2018, 2023, 1))
+    plt.grid()
+    plt.show()
+
+
+    # Gimimu metinis procentinis rodiklis, vertinant salies gyventoju skaiciu
+
+    gimimu_metinis_pokytis = (y3 / y0) * 100
+    # spausdiname
+    for i in range(gimimu_metinis_pokytis.size):
+        print(f'{i + 2018} metų gimimų procentinis rodiklis: {round(gimimu_metinis_pokytis[i], 2)} %')
+
+    # Procentinio rodiklio linijine diagrama
+
+    plt.plot(x, gimimu_metinis_pokytis, color='#8a2be2', marker='o')
+    plt.title('Procentinio metinio gimimų rodiklio kitimas')
+    plt.xlabel('Metai')
+    plt.ylabel('Gimimų procentinis rodiklis %')
+    plt.xlim([2018-0.25, 2022+0.25])
+    plt.xticks(range(2018, 2023, 1))
+    plt.grid()
+    plt.show()
     #
-    # x = np.array(list_of_years)
-    # y1 = np.array(list_of_vma)
-    # y2 = np.array(list_of_vap)
-    # plt.plot(x, y1, label = 'Visų gimdymų')
-    # plt.plot(x, y2, color = 'red', label = 'Pirmagimis')
-    # plt.title('Gimdančių moterų vidutinis amžius')
-    # plt.xlabel('Metai')
-    # plt.ylabel('Moters amžius')
-    # plt.legend()
-    # plt.xlim([2018-0.25, 2022+0.25])
-    # plt.xticks(range(2018, 2023, 1))
-    # plt.grid()
-    # plt.show()
-    #
-    #
-    # # 2.Gimusiu vaiku skaiciaus analize
-    #
-    # x = np.array(list_of_years)
-    # y0 = np.array(list_of_gyvsk)
-    # y3 = np.array(list_of_gimev)
-    # y4 = np.array(list_of_gimeb)
-    # y5 = np.array(list_of_gimem)
-    # gim_5m_suma = np.sum(y3)
-    # gim_5m_min = np.min(y3)
-    # gim_5m_max = np.max(y3)
-    # gim_5m_avg = np.average(y3)
-    # gimev2018 = y3[0]
-    # gimev2019 = y3[1]
-    # gimev2020 = y3[2]
-    # gimev2021 = y3[3]
-    # gimev2022 = y3[4]
-    # gimeb2018 = y4[0]
-    # gimeb2019 = y4[1]
-    # gimeb2020 = y4[2]
-    # gimeb2021 = y4[3]
-    # gimeb2022 = y4[4]
-    # gimem2018 = y5[0]
-    # gimem2019 = y5[1]
-    # gimem2020 = y5[2]
-    # gimem2021 = y5[3]
-    # gimem2022 = y5[4]
-    #
-    # # spausdiname statistinius rodiklius
-    # print(f'2018-2022 metais viso gimė {gim_5m_suma} vaikų')
-    # print(f'2018-2022 metais mažiausiai ({gim_5m_min}) vaikų gimė 2022 metais')
-    # print(f'2018-2022 metais daugiausiai ({gim_5m_max}) vaikų gimė 2018 metais')
-    # print(f'2018-2022 metais vidutiniškai per metus gimdavo {int(gim_5m_avg)} vaikų')
-    #
-    # # Linijine gimusiu vaiku diagrama
-    #
-    # plt.plot(x, y3, color='#8a2be2', marker='o', label='Bendras')
-    # plt.plot(x, y4, color='#0a75ad', marker='o', label='Berniukai')
-    # plt.plot(x, y5, color='#fb607f', marker='o', label='Mergaitės')
-    # plt.text(2018-0.1, 26850, gimev2018, fontsize=10, color='#8a2be2')
-    # plt.text(2019-0.15, 26000, gimev2019, fontsize=10, color='#8a2be2')
-    # plt.text(2020-0.15, 23750, gimev2020, fontsize=10, color='#8a2be2')
-    # plt.text(2021-0.15, 22000, gimev2021, fontsize=10, color='#8a2be2')
-    # plt.text(2022-0.3, 20700, gimev2022, fontsize=10, color='#8a2be2')
-    # plt.text(2018-0.1, 15000, gimeb2018, fontsize=10, color='#0a75ad')
-    # plt.text(2019-0.15, 14600, gimeb2019, fontsize=10, color='#0a75ad')
-    # plt.text(2020-0.15, 13700, gimeb2020, fontsize=10, color='#0a75ad')
-    # plt.text(2021-0.15, 12500, gimeb2021, fontsize=10, color='#0a75ad')
-    # plt.text(2022-0.3, 12200, gimeb2022, fontsize=10, color='#0a75ad')
-    # plt.text(2018-0.1, 12600, gimem2018, fontsize=10, color='#fb607f')
-    # plt.text(2019-0.2, 12200, gimem2019, fontsize=10, color='#fb607f')
-    # plt.text(2020-0.2, 10950, gimem2020, fontsize=10, color='#fb607f')
-    # plt.text(2021-0.2, 10300, gimem2021, fontsize=10, color='#fb607f')
-    # plt.text(2022-0.3, 10000, gimem2022, fontsize=10, color='#fb607f')
-    # plt.title('Gimusių vaikų skaičiaus kitimas')
-    # plt.xlabel('Metai')
-    # plt.ylabel('Gimusių per metus vaikų skaičius')
-    # plt.legend()
-    # plt.xlim([2018-0.25, 2022+0.25])
-    # plt.xticks(range(2018, 2023, 1))
-    # plt.grid()
-    # plt.show()
-    #
-    #
-    # # Gimimu metinis procentinis rodiklis, vertinant salies gyventoju skaiciu
-    #
-    # gimimu_metinis_pokytis = (y3 / y0) * 100
-    # # spausdiname
-    # for i in range(gimimu_metinis_pokytis.size):
-    #     print(f'{i + 2018} metų gimimų procentinis rodiklis: {round(gimimu_metinis_pokytis[i], 2)} %')
-    #
-    # # Procentinio rodiklio linijine diagrama
-    #
-    # plt.plot(x, gimimu_metinis_pokytis, color='#8a2be2', marker='o')
-    # plt.title('Procentinio metinio gimimų rodiklio kitimas')
-    # plt.xlabel('Metai')
-    # plt.ylabel('Gimimų procentinis rodiklis %')
-    # plt.xlim([2018-0.25, 2022+0.25])
-    # plt.xticks(range(2018, 2023, 1))
-    # plt.grid()
-    # plt.show()
-    # #
-    #
-    # # 3.Uzsienio salyse gimusiu lietuviu vaiku skaiciu analize
-    #
-    # # Viso 2018-2022 m. uzsienyje gimusiu lietuviu vaiku suma
-    # # spausdiname
-    # y7 = np.array(list_of_uzs)
-    # gim_uzs_5m_suma = np.sum(y7)
-    # print(f'2018-2022 metais užsienyje gimusių lietuvių vaikų skaičius yra: {gim_uzs_5m_suma}')
-    #
-    # # Gimusiu lietuviu vaiku Lietuvoje ir uzsienyje 2018-2022 m. palyginimo linijine diagrama
-    #
-    # x = np.array(list_of_years)
-    # y6 = np.array(list_of_LT)
-    # y7 = np.array(list_of_uzs)
-    # gimeLT2018 = y6[0]
-    # gimeLT2019 = y6[1]
-    # gimeLT2020 = y6[2]
-    # gimeLT2021 = y6[3]
-    # gimeLT2022 = y6[4]
-    # gimeUZS2018 = y7[0]
-    # gimeUZS2019 = y7[1]
-    # gimeUZS2020 = y7[2]
-    # gimeUZS2021 = y7[3]
-    # gimeUZS2022 = y7[4]
-    # plt.figure(figsize=(9, 6))
-    # plt.plot(x, y6, color='#000000', marker='o', linewidth='2', label='Gimė Lietuvoje')
-    # plt.plot(x, y7, color='red',marker='o', linewidth='2', label='Gimė užsienyje')
-    # plt.text(2018, 24200, gimeLT2018, fontsize=12, color='#000000')
-    # plt.text(2019, 22300, gimeLT2019, fontsize=12, color='#000000')
-    # plt.text(2020, 21600, gimeLT2020, fontsize=12, color='#000000')
-    # plt.text(2021, 20700, gimeLT2021, fontsize=12, color='#000000')
-    # plt.text(2022-0.2, 19600, gimeLT2022, fontsize=12, color='#000000')
-    # plt.text(2018, 3000, gimeUZS2018, fontsize=12, color='red')
-    # plt.text(2019, 4100, gimeUZS2019, fontsize=12, color='red')
-    # plt.text(2020, 2700, gimeUZS2020, fontsize=12, color='red')
-    # plt.text(2021, 1600, gimeUZS2021, fontsize=12, color='red')
-    # plt.text(2022-0.1, 1250, gimeUZS2022, fontsize=12, color='red')
-    # plt.title('Gimusių vaikų Lietuvoje ir užsienyje skaičių palyginimas')
-    # plt.xlabel('Metai')
-    # plt.ylabel('Vaikų skaičius')
-    # plt.legend()
-    # plt.xlim([2018-0.25, 2022+0.25])
-    # plt.xticks(range(2018, 2023, 1))
-    # plt.grid()
-    # plt.show()
-    #
-    # # Gimusiu lietuviu vaiku LT-UZS 2018-2022 m. vidurkio palyginimo "pie" diagrama
-    #
-    # gimeLT_5m_vid = np.average(y6)
-    # gimeUZS_5m_vid = np.average(y7)
-    # gime_salys_5m_vid = np.array([int(gimeLT_5m_vid), int(gimeUZS_5m_vid)])
-    # fig, ax = plt.subplots(figsize=(8, 6))
-    # myexplode = [0.1, 0]
-    # mycolors = ['#247b61', '#ff8c14']
-    # ax.pie(gime_salys_5m_vid, labels=gime_salys_5m_vid, colors=mycolors, autopct='%1.1f%%', startangle=335,
-    # explode=myexplode)
-    # ax.axis('equal')
-    # plt.title('2018-2022 m. gimusių vaikų Lietuvoje ir užsienyje vidurkių palyginimas')
-    # plt.legend(['Lietuvoje', 'Užsienyje'])
-    # plt.show()
-    #
-    # # Gimusiu lietuviu vaiku ivairiose uzsienio salyse skaiciu palyginamoji linijine diagrama
-    #
-    # x = np.array(list_of_years)
-    # y8 = np.array(list_of_GBR)
-    # y9 = np.array(list_of_NOR)
-    # y10 = np.array(list_of_DE)
-    # y11 = np.array(list_of_IRL)
-    # y12 = np.array(list_of_RUS)
-    # y13 = np.array(list_of_SWE)
-    # y14 = np.array(list_of_ESP)
-    # y15 = np.array(list_of_USA)
-    # y16 = np.array(list_of_OC)
-    #
-    # plt.plot(x, y8, color = '#011efe', label = 'D.Britanija')
-    # plt.plot(x, y9, color = '#fe00f6', label = 'Norvegija')
-    # plt.plot(x, y10, color='#000000', label='Vokietija')
-    # plt.plot(x, y11, color='#008744', label='Airija')
-    # plt.plot(x, y12, color='#ff0000', label='Rusija')
-    # plt.plot(x, y13, color='#071d54', label='Švedija')
-    # plt.plot(x, y14, color='#ff7400', label='Ispanija')
-    # plt.plot(x, y15, color='#0c6d63', label='JAV')
-    # plt.plot(x, y16, color='#002d66', label='Kitos')
-    # plt.title('Užsienio šalyse gimusių vaikų skaičių palyginimas')
-    # plt.xlabel('Metai')
-    # plt.ylabel('Gimusių vaikų skaičius')
-    # plt.legend()
-    # plt.xlim([2018-0.25, 2022+0.25])
-    # plt.xticks(range(2018, 2023, 1))
-    # plt.grid()
-    # plt.show()
+
+    # 3.Uzsienio salyse gimusiu lietuviu vaiku skaiciu analize
+
+    # Viso 2018-2022 m. uzsienyje gimusiu lietuviu vaiku suma
+    # spausdiname
+    y7 = np.array(list_of_uzs)
+    gim_uzs_5m_suma = np.sum(y7)
+    print(f'2018-2022 metais užsienyje gimusių lietuvių vaikų skaičius yra: {gim_uzs_5m_suma}')
+
+    # Gimusiu lietuviu vaiku Lietuvoje ir uzsienyje 2018-2022 m. palyginimo linijine diagrama
+
+    x = np.array(list_of_years)
+    y6 = np.array(list_of_LT)
+    y7 = np.array(list_of_uzs)
+    gimeLT2018 = y6[0]
+    gimeLT2019 = y6[1]
+    gimeLT2020 = y6[2]
+    gimeLT2021 = y6[3]
+    gimeLT2022 = y6[4]
+    gimeUZS2018 = y7[0]
+    gimeUZS2019 = y7[1]
+    gimeUZS2020 = y7[2]
+    gimeUZS2021 = y7[3]
+    gimeUZS2022 = y7[4]
+    plt.figure(figsize=(9, 6))
+    plt.plot(x, y6, color='#000000', marker='o', linewidth='2', label='Gimė Lietuvoje')
+    plt.plot(x, y7, color='red',marker='o', linewidth='2', label='Gimė užsienyje')
+    plt.text(2018, 24200, gimeLT2018, fontsize=12, color='#000000')
+    plt.text(2019, 22300, gimeLT2019, fontsize=12, color='#000000')
+    plt.text(2020, 21600, gimeLT2020, fontsize=12, color='#000000')
+    plt.text(2021, 20700, gimeLT2021, fontsize=12, color='#000000')
+    plt.text(2022-0.2, 19600, gimeLT2022, fontsize=12, color='#000000')
+    plt.text(2018, 3000, gimeUZS2018, fontsize=12, color='red')
+    plt.text(2019, 4100, gimeUZS2019, fontsize=12, color='red')
+    plt.text(2020, 2700, gimeUZS2020, fontsize=12, color='red')
+    plt.text(2021, 1600, gimeUZS2021, fontsize=12, color='red')
+    plt.text(2022-0.1, 1250, gimeUZS2022, fontsize=12, color='red')
+    plt.title('Gimusių vaikų Lietuvoje ir užsienyje skaičių palyginimas')
+    plt.xlabel('Metai')
+    plt.ylabel('Vaikų skaičius')
+    plt.legend()
+    plt.xlim([2018-0.25, 2022+0.25])
+    plt.xticks(range(2018, 2023, 1))
+    plt.grid()
+    plt.show()
+
+    # Gimusiu lietuviu vaiku LT-UZS 2018-2022 m. vidurkio palyginimo "pie" diagrama
+
+    gimeLT_5m_vid = np.average(y6)
+    gimeUZS_5m_vid = np.average(y7)
+    gime_salys_5m_vid = np.array([int(gimeLT_5m_vid), int(gimeUZS_5m_vid)])
+    fig, ax = plt.subplots(figsize=(8, 6))
+    myexplode = [0.1, 0]
+    mycolors = ['#247b61', '#ff8c14']
+    ax.pie(gime_salys_5m_vid, labels=gime_salys_5m_vid, colors=mycolors, autopct='%1.1f%%', startangle=335,
+    explode=myexplode)
+    ax.axis('equal')
+    plt.title('2018-2022 m. gimusių vaikų Lietuvoje ir užsienyje vidurkių palyginimas')
+    plt.legend(['Lietuvoje', 'Užsienyje'])
+    plt.show()
+
+    # Gimusiu lietuviu vaiku ivairiose uzsienio salyse skaiciu palyginamoji linijine diagrama
+
+    x = np.array(list_of_years)
+    y8 = np.array(list_of_GBR)
+    y9 = np.array(list_of_NOR)
+    y10 = np.array(list_of_DE)
+    y11 = np.array(list_of_IRL)
+    y12 = np.array(list_of_RUS)
+    y13 = np.array(list_of_SWE)
+    y14 = np.array(list_of_ESP)
+    y15 = np.array(list_of_USA)
+    y16 = np.array(list_of_OC)
+
+    plt.plot(x, y8, color = '#011efe', label = 'D.Britanija')
+    plt.plot(x, y9, color = '#fe00f6', label = 'Norvegija')
+    plt.plot(x, y10, color='#000000', label='Vokietija')
+    plt.plot(x, y11, color='#008744', label='Airija')
+    plt.plot(x, y12, color='#ff0000', label='Rusija')
+    plt.plot(x, y13, color='#071d54', label='Švedija')
+    plt.plot(x, y14, color='#ff7400', label='Ispanija')
+    plt.plot(x, y15, color='#0c6d63', label='JAV')
+    plt.plot(x, y16, color='#002d66', label='Kitos')
+    plt.title('Užsienio šalyse gimusių vaikų skaičių palyginimas')
+    plt.xlabel('Metai')
+    plt.ylabel('Gimusių vaikų skaičius')
+    plt.legend()
+    plt.xlim([2018-0.25, 2022+0.25])
+    plt.xticks(range(2018, 2023, 1))
+    plt.grid()
+    plt.show()
     #
     #
     # # 4. Mirusiu zmoniu Lietuvoje analize
@@ -617,6 +617,8 @@ def load_data(file):
     # plt.xticks(range(2018, 2023, 1))
     # plt.grid()
     # plt.show()
+
+
 
 
 def main():

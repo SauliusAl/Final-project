@@ -27,7 +27,7 @@ išsamią analizę, reikia naudotis Git biblioteka. Projekto metu reikia atlikti
 2) Duomenų valymas ir transformacija;
 3) Statistinė analizė;
 4) Vizualizacija;
-5) išvados.
+5) Išvados.
 
 **Duomenų rinkimas ir analizė**
 
@@ -69,9 +69,9 @@ Projekto metu buvo sukurtos šios diagramos:
 **Išvados**
 
 Atlikome Lietuvos gyventojų 2018 - 2022 metų gimimo ir mirties analizę. 
-Remiantis pateikta informacija, Lietuvoje 2018-2022 metais gimsta vis mažiau vaikų. 2022 m. gimė 27 967 kūdikiai, 
-tai yra 2,8 proc. mažiau nei 2021 m. ir 10,5 proc. mažiau nei 2018 m. Mirtingumas taip pat didėja. 
-2022 m. mirė 54 455 žmonės, tai yra 2,2 proc. daugiau nei 2021 m. ir 4,6 proc. daugiau nei 2018 m.
+Remiantis pateikta informacija, Lietuvoje 2018-2022 metais gimsta vis mažiau vaikų. 2022 m. gimė 22 068 kūdikiai, 
+tai yra net 21,6 proc. mažiau nei 2018 metais. O mirtingumas didėja. 2022 metais mirė 42 884 žmonės,
+tai yra 8,4 proc. daugiau nei 2018 metais.
 
 Ši tendencija yra susijusi su keliais veiksniais, įskaitant:
 
